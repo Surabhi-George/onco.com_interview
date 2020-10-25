@@ -1,0 +1,195 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+/* OVERRIDE */
+h1,h2,h3,h4,h5,h6{
+    font-weight: 700;
+}
+h1 {
+    font-size: 42px;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: orange;
+    cursor: pointer;
+    text-decoration: none;
+}
+a.oc-decoration{
+    text-decoration: underline;
+}
+small, .small{
+    font-size: 13px;
+}
+/* COMMON */
+.oc-light-gray{
+    background-color: #fbfafa;
+}
+.oc-white-text{
+    color: #ffffff;
+}
+.oc-orange-text{
+    color: #ffa500;
+}
+.oc-blue-text{
+    color: #52adf3;
+}
+.oc-dark-blue-text{
+    color: #11375c;
+}
+.w-80 {
+    width: 80% !important;
+}
+.oc-font18{
+    font-size: 18px;
+}
+.oc-cursor-pointer{
+    cursor: pointer;
+}
+/* translation */
+.oc-top-translate{
+    transform: translateY(0);
+    transition: all .5s;
+}
+.oc-top-translate:hover{
+    transform: translateY(-5px);
+}
+.oc-right-translate{
+    transform: translateX(0);
+    transition: all .5s;
+}
+.oc-right-translate:hover{
+    transform: translateX(5px);
+}
+/* button */
+.btn{
+    padding: .6em 1rem;
+    outline: none;
+    color: #ffffff;
+    min-width: 180px;
+    transition: all .5s;
+    transform: translateY(0);
+}
+.btn:hover{
+    color: #ffffff;
+    transform: translateY(-5px);
+}
+.btn:focus, .btn.focus{
+    box-shadow: none;
+}
+.btn-warning {
+    color: #ffffff;
+    background-color: #ffa500;
+    border-color: #ffa500;
+}
+/* form */
+select{
+    -webkit-appearance: none;
+    background: url('/assets/img/dwn-arw-black.png') no-repeat right/cover;
+    background-size: 10px;
+    background-position: calc(100% - 2px);
+}
+
+.form-control {    
+    padding: 0px 0;
+    font-size: 14px;
+    border: 0;
+    border-bottom: 1px solid #bcbcbc;
+    border-radius: 0;
+    outline: none !important;
+    box-shadow: none !important;
+    height: 30px;
+}
+.form-group {
+    margin-bottom: 1.1rem;
+}
+option[value=""][disabled] {
+    display: none;
+}
+
+/* CHECKBOX */
+.oc-chk-wrap {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.oc-chk-wrap.small {
+    padding-left: 25px;
+    font-size: 12px;
+}
+.oc-chk-wrap input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    border: 1px solid #979797;
+    border-radius: 2px;
+}
+.oc-chk-wrap.small .checkmark{
+    width: 15px;
+    height: 15px;
+}
+.oc-chk-wrap input:checked ~ .checkmark {
+    background-color: #52adf3;
+    border-color: #52adf3;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.oc-chk-wrap input:checked ~ .checkmark:after {
+    display: block;
+ }
+.oc-chk-wrap .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+}
+.oc-chk-wrap.small .checkmark:after {
+    left: 4px;
+    top: 0px;
+}
+
+/* media queries */
+@media(max-width :992px){
+    .oc-font18 {
+        font-size: 14px;
+    }
+}
+@media(max-width:768px){
+    h1 {
+        font-size: 34px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg sticky-top navbar-light">
+    <div class="container">
+        <a class="navbar-brand" routerLink=""><img src="assets/img/logo.png" alt="The logo of Onco.com" width="183"></a>
+        <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed"
+         data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">                
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="about">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tel:+91 9982773822"><img src="assets/img/h-phone.png" alt="The icon of phone"> +91 9982773822</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"><img src="assets/img/h-chat.png" alt="The icon of chat"> Chat with us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"><img src="assets/img/h-user.png" alt="The icon of user"> Hello, Visal</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

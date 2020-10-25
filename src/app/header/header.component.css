@@ -1,0 +1,31 @@
+.navbar{
+    padding: 10px 15px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.10);
+    background: #fff;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #131313;
+    display: flex;
+    align-items: center;
+    padding-right: 0.6rem;
+    padding-left: 0.6rem;
+    transition: all .5s;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    filter: grayscale(1);
+    color: #a8a8a8;
+}
+.navbar-light .navbar-nav .nav-link img{
+    margin-right: 5px;
+}
+.navbar-light .navbar-toggler {
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+@media(max-width:992px){
+    .navbar-light .navbar-nav .nav-link {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}

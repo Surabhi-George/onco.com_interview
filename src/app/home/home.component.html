@@ -1,0 +1,378 @@
+<!-- top banner -->
+<section class="oc-top-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="mt-5">Cancer is <span class="oc-orange-text">hard.</span><br /><span class="oc-blue-text">Onco</span> helps you beat it.</h1>
+                <p class="oc-lead mt-3">Get cutting-edge treatment advice and priority booking with the best cancer doctors.</p>
+                <div class="mt-4 mb-5">
+                    <ul>
+                        <li>
+                            <img src="assets/img/tb-globe.png" alt="" width="40" class="mr-3" /> Expert treatment advice from 1500+ oncologists in India and us
+                        </li>
+                        <li>
+                            <img src="assets/img/tb-patient.png" alt="" width="40" class="mr-3" /> Served 35000+ patients from 18 countries
+                        </li>
+                        <li>
+                            <img src="assets/img/tb-treatment.png" alt="" width="40" class="mr-3" /> 500+ treatment centers and diagnostic labs in our network
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col d-flex oc-dctor justify-content-end align-items-center">
+                <form [formGroup]="createAcForm" (ngSubmit)="onSubmit()" class="shadow p-4 bg-white rounded" autocomplete="off">
+                    <h5 class="mb-4">Cancer second opinions beginning at <span class="oc-orange-text">₹ 5000</span></h5>
+                   
+                    <div class="form-group">
+                        <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="Name" />
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Email" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.pattern">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-4">
+                            <select class="form-control">    
+                                <option value="1">India(+1)</option>
+                                <option value="2">USA(+1)</option>
+                                <option value="3">Algeria(+213)</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-8">
+                            <input type="text" class="form-control" placeholder="Phone no" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+                            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                <div *ngIf="f.phone.errors.required">This field is required</div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div>
+                        <select class="form-control" formControlName="question" [ngClass]="{ 'is-invalid': submitted && f.question.errors }">    
+                            <option selected value="" disabled>Please select your question</option>                    
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <div *ngIf="submitted && f.question.errors" class="invalid-feedback">
+                            <div *ngIf="f.question.errors.required">This field is required</div>
+                        </div> 
+                    </div>                   
+                    <div class="form-check form-check-inline mb-2 mt-3">
+                        <label for="isAccept" class="oc-chk-wrap small">I agree to onco.com's <a href="" class="oc-orange-text oc-decoration">terms & conditions</a>
+                            <input type="checkbox" id="isAccept" formControlName="isAccept" [ngClass]="{ 'is-invalid': submitted && f.isAccept.errors }">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div *ngIf="submitted && f.isAccept.errors" class="invalid-feedback">
+                            Please agree T & C.
+                        </div>
+                    </div>
+                    <div class="text-danger text-left" *ngIf="message">{{message}}</div>
+                    <button type="button" type="submit" class="btn btn-warning btn-block mt-3">START NOW</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Need help -->
+<section class="oc-help-section">
+    <div class="container">
+        <div class="row">
+            <div class="col  border-right border-bottom">
+                <div class="media">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-3">I need better treatment options</h5>
+                        <p class="w-80">We provide cutting-edge treatment advice from best experts in India and US</p>
+                        <button class="btn mt-2 btn-gr1 btn-sm shadow">Get an expert opinion</button>
+                    </div>
+                    <img src="assets/img/h-expert.png" class="ml-3 align-self-center" alt="Get an expert opinion">
+                </div>
+            </div>
+            <div class="col border-bottom">
+                <div class="media ml-4">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-3">I need to consult the best doctor</h5>
+                        <p class="w-80">We set up priority appoinments with expert oncologists unique to your needs</p>
+                        <button class="btn mt-2 btn-gr2 btn-sm shadow">Find the right doctor</button>
+                    </div>
+                    <img src="assets/img/h-right-doctor.png" class="ml-3 align-self-center" alt="Find the right doctor">
+                </div>
+            </div>
+        </div>
+        <div class="row">            
+            <div class="col border-bottom border-right">
+                <div class="media">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-3">I need a specialised test</h5>
+                        <p class="w-80">We offer cancer specific tests through world class diagnostic centres at best proces</p>
+                        <button class="btn mt-2 btn-gr3 btn-sm shadow">Book a test</button>
+                    </div>
+                    <img src="assets/img/h-book-test.png" class="ml-3 align-self-center" alt="Book a test">
+                </div>
+            </div>
+            <div class="col border-bottom">
+                <div class="media ml-4">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-3">I'm confused, I need help</h5>
+                        <p class="w-80">We provide relevant advice to all your questions and help you plan your treatment with confidence</p>
+                        <button class="btn mt-2 btn-gr4 btn-sm shadow">Talk to a Care Manager</button>
+                    </div>
+                    <img src="assets/img/h-care-manager.png" class="ml-3 align-self-center" alt="Talk to care manager">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- know our doctors -->
+<section class="oc-know-cd-section">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="font-weight-normal oc-dark-blue-text mb-3">Know our Cancer Doctors</h2>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <div class="media">
+                    <img src="assets/img/kcd-years.png" class="mr-4" alt="...">
+                    <div class="media-body">
+                        <h6 class="mt-0 mb-1">10+ Years</h6>
+                        <p class="small text-muted">Our ancer experts have an average in-field experience of 10+ years</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="media">
+                    <img src="assets/img/kcd-patients.png" class="mr-4" alt="...">
+                    <div class="media-body">
+                        <h6 class="mt-0 mb-1">10k Patients</h6>
+                        <p class="small text-muted">Each ofnour oncologists has treated more than 10,000 cancer patients</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="media">
+                    <img src="assets/img/kcd-top-oncologist.png" class="mr-4" alt="...">
+                    <div class="media-body">
+                        <h6 class="mt-0 mb-1">Top Oncologists</h6>
+                        <p class="small text-muted">Our doctors are trained at the top cancer Institutes such as Tata Memorial, AIIMS, and Memorial Sloan Kettering (US)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 mb-4">
+            <div class="d-flex col align-items-center justify-content-center w-100">
+                <img (click)="leftSliderClick()" src="assets/img/lft-arw-slider.png" class="mr-5  mt-n5 oc-cursor-pointer" alt="The icon for left arrow" />
+                <div class="oc-slider-wrap">
+                    <ul class="oc-doctors d-flex">
+                        <li *ngFor="let d of doctors;let i = index">
+                            <div class="oc-thumb mb-2" [style.backgroundImage]="'url(assets/img/'+ d.image +')'"></div>
+                            <p class="m-0 font-weight-normal">{{d.name}}</p>
+                            <small class="text-muted">{{d.role}}</small>
+                        </li>
+                    </ul>                  
+                </div>
+                <img (click)="rightSliderClick()" src="assets/img/rgt-arw-slider.png" class="ml-5 mt-n5 oc-cursor-pointer" alt="The icon for right arrow" />
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col text-center">
+                <button class="btn btn-warning mr-5">Book priority appointment</button> <a class="oc-right-translate oc-blue-text">Learn More <img src="assets/img/anchor-arw.png" alt="The icon for learn more about onco" class="ml-2"></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Get priliminary assessment -->
+<section class="oc-gps-section">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="pt-5 pb-5 pr-5">
+                    <h2 class="oc-white-text font-weight-normal">Get <span class="font-weight-bold">FREE</span> Priliminary<br> Assessment of your Cancer</h2>
+                    <p class="mt-4">We have medically-trained Care Managers dedicated to each unique cases. Intelligent mapping of Care Mangers to patients ensures personal attention for all your questions</p>
+                    <img src="assets/img/priliminary-assessment.png" class="img-fluid" alt="Get free priliminary assessment" />
+                </div>
+            </div>
+            <div class="col d-flex align-items-center">
+                <form [formGroup]="priliminaryForm" (ngSubmit)="onSubmitPriliminaryForm()" autocomplete="off" class="oc-pa-form oc-white-text">
+                    <div class="form-group">
+                        <label for="exampleInput">What is the type of cancer?*</label>
+                        <select class="form-control" formControlName="type" [ngClass]="{ 'is-invalid': pfSubmitted && pf.type.errors }">    
+                            <option value="" disabled selected>Select</option>                    
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <div *ngIf="pfSubmitted && pf.type.errors" class="invalid-feedback">
+                            <div *ngIf="pf.type.errors.required">This field is required</div>
+                        </div> 
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="exampleInput">What is the stage of cancer?*</label>
+                        <select class="form-control" formControlName="stage" [ngClass]="{ 'is-invalid': pfSubmitted && pf.stage.errors }">    
+                            <option value="" disabled selected>Select</option>                    
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <div *ngIf="pfSubmitted && pf.stage.errors" class="invalid-feedback">
+                            <div *ngIf="pf.stage.errors.required">This field is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="exampleInput">What is the patients's general condition?*</label>
+                        <select class="form-control" formControlName="condition" [ngClass]="{ 'is-invalid': pfSubmitted && pf.condition.errors }">    
+                            <option value="" disabled selected>Select</option>                    
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <div *ngIf="pfSubmitted && pf.condition.errors" class="invalid-feedback">
+                            <div *ngIf="pf.condition.errors.required">This field is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="exampleInput" class="mb-3">Select treatment(s) received so far</label>
+                        <div class="form-check form-check-inline mb-2">
+                            <label class="oc-chk-wrap">Chemotherapy
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline mb-2">
+                            <label class="oc-chk-wrap">Surgery
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline mb-2">
+                            <label class="oc-chk-wrap">Radiation
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline mb-2">
+                            <label class="oc-chk-wrap">Threatment not yet started
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline mb-2">
+                            <label class="oc-chk-wrap">Others
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>                    
+                    <button type="button" type="submit" class="btn btn-primary btn-block mt-5">Show Prilimiary Assessment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- We take care -->
+<section class="d-flex align-items-center" style="background: url(assets/img/SMART-PHONE.jpg) no-repeat top/cover;height: 520px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <h2 class="font-weight-normal oc-dark-blue-text mb-4">We take care of you throughout your journey</h2>
+                <p class="oc-font18 oc-dark-blue-text">We have medically-trained Care Managers dedicated to each unique case. Inteligent mapping of Care Mangers to patients ensures personal attention for all your questions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- testimonials -->
+<section class="oc-testimonials d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="font-weight-normal oc-dark-blue-text mb-5">Listern to what our customers have to say about us</h2>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col d-flex">
+                <div class="oc-t-card text-center">
+                    <img src="assets/img/dummy.jpg" alt="Profile image" class="rounded-circle" width="85" />
+                    <img src="assets/img/quote.png" class="oc-quotes m-0" alt="Quotes" />
+                    <p class="mt-4 mb-4 oc-font18">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</p>
+                    <h6>Sanjay</h6>
+                </div>
+            </div>
+            <div class="col d-flex">
+                <div class="oc-t-card text-center">
+                    <img src="assets/img/quote.png" class="oc-quotes m-0" alt="Quotes" />
+                    <img src="assets/img/dummy.jpg" alt="Profile image" class="rounded-circle" width="85" />
+                    <p class="mt-4 mb-4 oc-font18">The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</p>
+                    <h6>Sanjay</h6>
+                </div>
+            </div>
+            <div class="col d-flex">
+                <div class="oc-t-card text-center">
+                    <img src="assets/img/quote.png" class="oc-quotes m-0" alt="Quotes" />
+                    <img src="assets/img/dummy.jpg" alt="Profile image" class="rounded-circle" width="85" />
+                    <p class="mt-4 mb-4 oc-font18">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts.</p>
+                    <h6>Sanjay</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- onco in news -->
+<section class="oc-testimonials d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="font-weight-normal oc-dark-blue-text mb-5">Onco in News</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex">
+                <div class="oc-news-card text-center">
+                    <img src="assets/img/quote.png" class="oc-quotes m-0" alt="Quotes" />
+                    <p class="mt-5 mb-5 oc-font18 w-100">"Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</p>
+                    <img src="assets/img/news-logo.png" class="align-self-end" alt="The logo of news" />
+                </div>
+            </div>
+            <div class="col d-flex">
+                <div class="oc-news-card text-center">
+                    <img src="assets/img/quote.png" class="oc-quotes m-0" alt="Quotes" />
+                    <p class="mt-5 mb-5 oc-font18 w-100">"The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts.</p>
+                    <img src="assets/img/news-logo.png" class="align-self-end" alt="The logo of news" />
+                </div>
+            </div>
+            <div class="col d-flex">
+                <div class="oc-news-card text-center">
+                    <img src="assets/img/quote.png" class="oc-quotes m-0" alt="Quotes" />
+                    <p class="mt-5 mb-5 oc-font18 w-100">"The passage is attributed to an unknown typesetter.</p>
+                    <img src="assets/img/news-logo.png" class="align-self-end" alt="The logo of news" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Still unsure -->
+<section class="oc-unsure">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2>Still unsure? Talk to a Care manager</h2>
+            </div>
+            <div class="col-3">
+                <div class="d-flex align-items-center justify-content-end">
+                    <img src="assets/img/unsure-call.png" class="mr-2" alt="Call" />
+                    <p class="m-0">Call us at<br><b><a href="tel:+91 8884455789">+91 8884455789</a></b></p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="d-flex align-items-center justify-content-end">
+                    <img src="assets/img/unsure-email.png" class="mr-2" alt="Email" />
+                    <p class="m-0">Write to us at <br><b><a href="mailto:consult@onco.com">consult@onco.com</a></b></p> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
